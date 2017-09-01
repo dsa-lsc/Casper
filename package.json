@@ -1,8 +1,8 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "name": "rosa",
+    "description": "The theme for the DSA Libertarian Socialist Caucus.",
     "demo": "https://demo.ghost.io",
-    "version": "2.1.0",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=1.2.0"
     },
@@ -12,9 +12,9 @@
         "mobile": "assets/screenshot-mobile.jpg"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "DSA LSC",
+        "email": "red_rosa@dsa-lsc.org",
+        "url": "http://www.dsa-lsc.org"
     },
     "gpm": {
         "type": "theme",

@@ -7,13 +7,18 @@
     --green: #a4d037;
     --purple: #ad26b4;
     --yellow: #fecd35;
-    --red: #f05230;
-    --darkgrey: #15171A;
+    --red: rgb(236, 31, 39);
+    --darkgrey: rgb(35, 31, 32);
     --midgrey: #738a94;
     --lightgrey: #c5d2d9;
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
+    --lsc-white: rgb(255, 247, 235);
+
+    /* Fonts */
+    --main: "Muli", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    --quote: "Noto Serif", Times, serif;
 }
 
 /* Reset
@@ -282,9 +287,9 @@ html {
 body {
     overflow-x: hidden;
     color: color(var(--midgrey) l(-25%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.6em;
+    font-family: var(--main);
+    font-size: 1.8rem;
+    line-height: 1.6;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0;
@@ -383,7 +388,7 @@ dd {
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;;
+    border-left: var(--red) 0.5em solid;;
 }
 
 blockquote p {
@@ -411,7 +416,7 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    color: color(var(--red) l(-5%));
     text-decoration: none;
 }
 

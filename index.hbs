@@ -24,17 +24,19 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
 
         <div class="post-feed">
-            {{#foreach posts}}
-                {{#if featured }}
+            {{#get "posts" filter="featured:true" limit="1" as |featured|}}
+                {{#foreach featured }}
                     <section class="featured-full-content">
                         {{ content }}
                     </section>
-                {{/if}}
-                {{#unless featured}}
+                {{/foreach}}
+            {{/get}}
+            {{#get "posts" filter="featured:false" as |notFeatured|}}
+                {{#foreach notFeatured}}
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}}
-                {{/unless}}
-            {{/foreach}}
+                {{/foreach}}
+            {{/get}}
         </div>
 
     </div>

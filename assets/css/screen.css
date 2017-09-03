@@ -92,12 +92,10 @@ body {
   .home-template .post-feed,
   .tag-template .post-feed,
   .author-template .post-feed {
-      margin-top: -70px;
       padding-top: 0;
   }
   .home-template .site-nav {
       position: relative;
-      top: -70px;
   }
 }
 
@@ -167,7 +165,6 @@ body {
   flex-direction: column;
   justify-content: left;
   align-items: left;
-  min-height: 200px;
   max-height: 450px;
   padding: 2vw 0vw;
   text-align: center;
@@ -214,8 +211,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 40px;
-  overflow-y: hidden;
   // font-size: 1.2rem;
 }
 
@@ -225,7 +220,6 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   margin-right: 10px;
-  padding-bottom: 80px;
   letter-spacing: 0.4px;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -264,9 +258,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .nav {
   display: flex;
-  margin: 0 0 0 -12px;
   padding: 0;
   list-style: none;
+  margin: 0;
 }
 
 .nav li {
@@ -279,12 +273,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   display: block;
   margin: 0;
   padding: 10px 12px;
-  color: var(--red);
+  font-size: 2rem;
+  color: var(--lsc-white);
+  transition: var(--speed) background-color;
 }
 
+
 .nav li a:hover {
-  text-decoration: none;
   opacity: 1;
+  background-color: var(--red);
+  text-decoration: none;
 }
 
 .site-nav-right {
@@ -683,7 +681,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .kg-card-markdown {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 920px;
 }
 

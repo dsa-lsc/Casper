@@ -17,8 +17,12 @@
     --lsc-white: rgb(255, 247, 235);
 
     /* Fonts */
-    --main: "Muli", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    --quote: "Noto Serif", Times, serif;
+    --slab: 'Roboto Slab', serif;
+    --main: 'Open Sans', sans-serif;
+    --quote: 'Merriweather', serif;
+
+    /* Effects */
+    --speed: .2s;
 }
 
 /* Reset
@@ -164,6 +168,7 @@ dfn {
 h1 {
     margin: 0.67em 0;
     font-size: 2em;
+    font-family: var(--slab);
 }
 small {
     font-size: 80%;
@@ -418,10 +423,12 @@ blockquote cite a {
 a {
     color: color(var(--red) l(-5%));
     text-decoration: none;
+    transition: var(--speed) color;
 }
 
 a:hover {
     text-decoration: underline;
+    color: color(var(--red) l(+5%));
 }
 
 h1,
@@ -437,7 +444,7 @@ h6 {
 }
 
 h1 {
-    margin: 0 0 0.5em 0;
+    margin: 1rem 0 .5rem 0;
     font-size: 5rem;
     font-weight: 700;
 }

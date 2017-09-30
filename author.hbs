@@ -4,8 +4,9 @@
 {{#author}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
 <header class="site-header outer {{#if cover_image}}" style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
+
+    {{> "site-nav"}}
     <div class="inner">
-        {{> "site-nav"}}
         <div class="site-header-content">
             {{#if profile_image}}
                 <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />

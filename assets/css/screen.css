@@ -89,13 +89,11 @@ body {
 /* ---------------------------------------------------------- */
 
 @media (min-width: 900px) {
-  .home-template .post-feed,
-  .tag-template .post-feed,
-  .author-template .post-feed {
-      padding-top: 0;
+  .home-template .post-feed {
+    padding-top: 0;
   }
   .home-template .site-nav {
-      position: relative;
+    position: relative;
   }
 }
 
@@ -239,7 +237,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   display: block;
   margin-right: 24px;
   padding: 11px 0;
-  color: #fff;
   font-size: 1.7rem;
   line-height: 1em;
   font-weight: bold;
@@ -397,7 +394,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 240px;
   overflow: hidden;
   margin: 0 20px 40px;
   background: #fff center center;
@@ -405,12 +402,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   border-radius: 5px;
   box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
   transition: all 0.5s ease;
-}
-
-.post-card:hover {
-  box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
-  transition: all 0.3s ease;
-  transform: translate3D(0, -1px, 0);
 }
 
 .post-card-image-link {
@@ -584,7 +575,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-meta-date {
-  color: var(--blue);
+  color: var(--darkgrey);
 }
 
 .post-full-title {
@@ -623,7 +614,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
   position: relative;
   min-height: 230px;
   margin: 0 auto;
-  padding: 70px 100px 0;
+  padding-top: 70px;
   font-family: Georgia, serif;
   font-size: 2.2rem;
   line-height: 1.6em;

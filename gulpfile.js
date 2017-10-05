@@ -1,18 +1,37 @@
-var gulp = require('gulp');
+'use strict';
 
-// gulp plugins and utils
-var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
-var nodemon = require('gulp-nodemon');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
+/*
+    | GULP BUILD TOOL - verifies code, syncs browser, and creates public builds.
+    |
+    | TASKS:
+    | - gulp watch - starts the browser sync server
+    | - gulp lint  - runs jslint
+    | - gulp build - compiles a build for prod
+*/
 
-// postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+// GULP - Gulp specific plugins & utility modules
+var gulp         = require('gulp'),
+gutil            = require('gulp-util'),
+livereload       = require('gulp-livereload'),
+nodemon          = require('gulp-nodemon'),
+
+// CSS - CSS specific post processing modules
+sourcemaps       = require('gulp-sourcemaps'),
+autoprefixer     = require('autoprefixer'),
+postcss          = require('gulp-postcss'),
+colorFunction    = require('postcss-color-function'),
+cssnano          = require('cssnano'),
+customProperties = require('postcss-custom-properties'),
+easyimport       = require('postcss-easy-import');
+
+// JAVASCRIPT - JS specific processing modules
+
+// CONFIG VARIABLES
+var buildPath    = './build',
+cssPath          = './assets/css/*.css',
+jsPath           = './assets/js/**/*.js',
+viewPath         = './templates/**/*.hbs';
+
 
 var swallowError = function swallowError(error) {
     gutil.log(error.toString());

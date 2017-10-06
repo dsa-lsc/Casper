@@ -1,0 +1,19 @@
+//Fonts
+$sans-font: 'Fira Sans Condensed', 'Helvetica Neue Condensed', 'Helvetica', 'Sans-Serif';
+$serif-font: 'Zilla Slab', 'Georgia', 'Serif';
+
+//Colors
+$primary-red: #ee3532;
+$primary-black: #000000;
+$primary-white: #ffffff;
+$light-grey: #ececec;
+$dark-grey: #333333;
+$off-white: #fffdfb;
+
+//Mixins
+@mixin shadow($color) {
+  -webkit-box-shadow: -3px 0px 3px $color;
+  -moz-box-shadow: -3px 0px 3px $color;
+  box-shadow: -3px 0px 3px $color;
+}
+

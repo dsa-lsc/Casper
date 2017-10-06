@@ -1,73 +1,122 @@
 'use strict';
 
 /*
-    | GULP BUILD TOOL - verifies code, syncs browser, and creates public builds.
-    |
+    | GULP BUILD TOOL
+      Verifies code, syncs browser, and creates public builds.
+
+      !** This should be carried over for any new theme. It is a upgraded cleaner version of Ghost's default. **!
+
     | TASKS:
-    | - gulp watch - starts the browser sync server
-    | - gulp lint  - runs jslint
-    | - gulp build - compiles a build for prod
+       `gulp` - runs gulp watch
+       `gulp watch` - builds for dev (sourcemaps, unminifieds) & activates live reload
+       `gulp lint`  - runs lint
+       `gulp build` - compiles a build for prod
 */
 
-// GULP - Gulp specific plugins & utility modules
-var gulp         = require('gulp'),
-gutil            = require('gulp-util'),
-livereload       = require('gulp-livereload'),
-nodemon          = require('gulp-nodemon'),
+// GULP MODULES - Gulp specific plugins & utility modules
+var gulp     = require('gulp'),
+gutil        = require('gulp-util'),
+livereload   = require('gulp-livereload'),
+nodemon      = require('gulp-nodemon'),
+concat       = require('gulp-concat'),
 
-// CSS - CSS specific post processing modules
-sourcemaps       = require('gulp-sourcemaps'),
-autoprefixer     = require('autoprefixer'),
-postcss          = require('gulp-postcss'),
-colorFunction    = require('postcss-color-function'),
-cssnano          = require('cssnano'),
-customProperties = require('postcss-custom-properties'),
-easyimport       = require('postcss-easy-import');
+// CSS MODULES - CSS specific post processing modules
+sass         = require('gulp-sass'),
+sourcemaps   = require('gulp-sourcemaps'),
+autoprefixer = require('gulp-autoprefixer'),
 
-// JAVASCRIPT - JS specific processing modules
+// JAVASCRIPT MODULES - JS specific processing modules
+jshintLib    = require('jshint'),
+jshint       = require('gulp-jshint'),
+jshintStyle  = require('jshint-stylish'),
+uglify       = require('gulp-uglify'),
 
-// CONFIG VARIABLES
-var buildPath    = './build',
-cssPath          = './assets/css/*.css',
-jsPath           = './assets/js/**/*.js',
-viewPath         = './templates/**/*.hbs';
+// ASSET PATHS
+buildPath    = './assets/built',
+scssPath     = './assets/scss/*.scss',
+jsPath       = './assets/js/*.js';
 
 
-var swallowError = function swallowError(error) {
+// -- FUNCTIONS --
+function errorAlert(error) {
     gutil.log(error.toString());
     gutil.beep();
     this.emit('end');
-};
+}
 
-var nodemonServerInit = function () {
+function nodemonServerInit() {
     livereload.listen(1234);
-};
+}
 
-gulp.task('build', ['css'], function (/* cb */) {
-    return nodemonServerInit();
-});
 
-gulp.task('css', function () {
-    var processors = [
-        easyimport,
-        customProperties,
-        colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
-    ];
-    gulp.src('assets/css/*.css')
-        .on('error', swallowError)
+// -- CSS/SASS TASKS --
+gulp.task('css:dev', function() {
+    return gulp.src(scssPath)
         .pipe(sourcemaps.init())
-        .pipe(postcss(processors))
+        .pipe(sass({ outputStyle: 'expanded' })
+            .on('error', sass.logError))
+
+        .pipe(autoprefixer('last 2 versions'))
+        .pipe(concat('main.css'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('assets/built/'))
-        .pipe(livereload());
+        .pipe(gulp.dest(buildPath))
+        .pipe(livereload())
+        .on('error', errorAlert);
 });
 
-gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['css']);
+gulp.task('css:prod', function() {
+    return gulp.src(scssPath)
+        .pipe(sass({ outputStyle: 'compressed' })
+            .on('error', sass.logError))
+
+        .pipe(autoprefixer('last 2 versions'))
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest(buildPath))
+        .on('error', errorAlert);
 });
 
-gulp.task('default', ['build'], function () {
-    gulp.start('watch');
+
+// -- JAVASCRIPT TASKS --
+gulp.task('lint', function() {
+    return gulp.src(jsPath)
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 });
+
+gulp.task('scripts:dev', function() {
+    return gulp.src(jsPath)
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(buildPath))
+        .pipe(livereload())
+        .on('error', errorAlert);
+});
+
+gulp.task('scripts:prod', function() {
+    return gulp.src(jsPath)
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(buildPath))
+        .on('error', errorAlert);
+});
+
+
+// -- MAIN RUN TASKS --
+
+//Default - watches...
+gulp.task('default', ['watch']);
+
+//Build & watch for dev
+gulp.task('watch', ['css:dev', 'lint', 'scripts:dev'], function() {
+    nodemonServerInit();
+
+    gulp.watch(scssPath, ['css:dev']);
+    gulp.watch(jsPath, ['lint']);
+    gulp.watch(jsPath, ['scripts:dev']);
+});
+
+// Build for production
+gulp.task('build', ['css:prod', 'lint', 'scripts:prod']);
+
+

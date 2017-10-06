@@ -2,6 +2,8 @@
 
 The theme for the DSA-LSC website. It's based on Casper.
 
+### Next up, updating this document with new functionality!
+
 # First time using a Ghost theme?
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.

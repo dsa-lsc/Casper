@@ -58,11 +58,34 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: "Fira Sans Condensed", "Helvetica Neue Condensed", "Helvetica", "Sans-Serif";
+  font-weight: 400;
   font-size: 100%;
-  background-color: #fffdfb;
+  background-color: #fefefe;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  font-size: 2rem;
+  font-family: "Zilla Slab", "Georgia", "Serif";
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+.red-highlight {
+  color: #ee3532;
+  font-weight: 700;
 }
 
 /* ---------------------------------------
@@ -137,7 +160,7 @@ body, html {
 }
 
 .featured-full-content {
-  background-color: #fffdfb;
+  background-color: #fefefe;
   padding: 1vw 2vw;
   border-radius: 5px;
 }
@@ -152,302 +175,6 @@ body, html {
   font-weight: 300;
   font-style: italic;
   margin-top: 1rem;
-}
-
-/* 4. Site Header
-/* ---------------------------------------------------------- */
-.site-header {
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: #ffffff;
-  background: #333333 no-repeat center center;
-  background-size: cover;
-}
-
-.site-header:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  display: block;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.site-header:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 0;
-  z-index: 10;
-  display: block;
-  height: 80px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(transparent));
-  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
-}
-
-.site-header.no-cover:before,
-.site-header.no-cover:after {
-  display: none;
-}
-
-.site-header-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  max-height: 450px;
-  padding: 2vw 0vw;
-  text-align: center;
-}
-
-.site-title {
-  z-index: 10;
-  margin: 0;
-  padding: 0;
-  font-size: 3.8rem;
-  font-weight: 700;
-}
-
-.site-logo {
-  max-height: 45px;
-}
-
-.site-description {
-  z-index: 10;
-  margin: 0;
-  padding: 5px 0;
-  font-size: 2.2rem;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  opacity: 0.8;
-}
-
-@media (max-width: 500px) {
-  .site-title {
-    font-size: 3rem;
-  }
-  .site-description {
-    font-size: 1.8rem;
-  }
-}
-
-/* 5. Site Navigation
-/* ---------------------------------------------------------- */
-.site-nav {
-  position: relative;
-  z-index: 300;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.site-nav-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin-right: 10px;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-scrolling: touch;
-}
-
-/* Site Nav Hack Explanation (above):
-
-What's happening above it .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them.
-
-The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px of padding-bottom and a 40px fixed height parent (.site-nav) hides that entirely. Slightly hacky code. But nice clean end-result.
-
-*/
-.site-nav-logo {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: block;
-  margin-right: 24px;
-  padding: 11px 0;
-  font-size: 1.7rem;
-  line-height: 1em;
-  font-weight: bold;
-  letter-spacing: -0.5px;
-}
-
-.site-nav-logo:hover {
-  text-decoration: none;
-}
-
-.site-nav-logo img {
-  display: block;
-  width: auto;
-  height: 21px;
-}
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.nav li {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.nav li a {
-  display: block;
-  margin: 0;
-  padding: 10px 12px;
-  font-size: 2rem;
-  color: #ffffff;
-  -webkit-transition: 3s background-color;
-  transition: 3s background-color;
-}
-
-.nav li a:hover {
-  opacity: 1;
-  background-color: #ee3532;
-  text-decoration: none;
-}
-
-.site-nav-right {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 40px;
-}
-
-.social-links {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.social-links a:last-of-type {
-  padding-right: 20px;
-}
-
-.social-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0;
-  padding: 10px;
-  color: #fff;
-  opacity: 0.8;
-}
-
-.social-link:hover {
-  opacity: 1;
-}
-
-.social-link svg {
-  height: 1.8rem;
-  fill: #fff;
-}
-
-.social-link-fb svg {
-  height: 1.5rem;
-}
-
-.social-link-wb svg {
-  height: 1.6rem;
-}
-
-.social-link-wb svg path {
-  stroke: #fff;
-}
-
-.social-link-rss svg {
-  height: 1.9rem;
-}
-
-.subscribe-button {
-  display: block;
-  padding: 4px 10px;
-  border: #fff 1px solid;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1em;
-  border-radius: 10px;
-  opacity: 0.8;
-}
-
-.subscribe-button:hover {
-  text-decoration: none;
-  opacity: 1;
-}
-
-.rss-button {
-  opacity: 0.8;
-}
-
-.rss-button:hover {
-  opacity: 1;
-}
-
-.rss-button svg {
-  height: 2.1rem;
-  margin-bottom: 1px;
-  fill: #fff;
-}
-
-@media (max-width: 700px) {
-  .site-header {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  .site-nav-left {
-    margin-right: 0;
-    padding-left: 4vw;
-  }
-  .site-nav-right {
-    display: none;
-  }
 }
 
 /* 6. Post Feed
@@ -596,9 +323,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     -webkit-box-flex: 0;
         -ms-flex: 0 1 357px;
             flex: 0 1 357px;
-  }
-  .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
-    font-size: 2.6rem;
   }
   .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
     font-size: 1.8rem;
@@ -951,38 +675,10 @@ Usage (In Ghost editor):
           transform: rotate(45deg);
 }
 
-.post-full-content h1,
-.post-full-content h2,
-.post-full-content h3,
-.post-full-content h4,
-.post-full-content h5,
-.post-full-content h6 {
-  color: color(#333333 l(-5%));
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
 .post-full-content h1 {
   margin: 0.5em 0 0.2em 0;
   font-size: 4.6rem;
   font-weight: 700;
-}
-
-@media (max-width: 500px) {
-  .post-full-content h1 {
-    font-size: 2.8rem;
-  }
-}
-
-.post-full-content h2 {
-  margin: 0.5em 0 0.2em 0;
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-@media (max-width: 500px) {
-  .post-full-content h2 {
-    font-size: 2.6rem;
-  }
 }
 
 .post-full-content h3 {
@@ -2128,5 +1824,140 @@ Usage (In Ghost editor):
     margin-left: 0;
   }
 }
+
+#header {
+  margin-bottom: 20px;
+}
+
+#header .site-header {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  height: 200px;
+  -webkit-box-shadow: 0px 0px 3px #000000;
+  box-shadow: 0px 0px 3px #000000;
+  /* ------------ NAV ------------- */
+}
+
+#header .site-header .header-logo {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  float: left;
+  background: #000000 url("../images/logo-flag.png") no-repeat left top;
+  background-size: 100% auto;
+  text-indent: -99999px;
+  height: 200px;
+  width: 298px;
+}
+
+#header .site-header .header-title {
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding-top: 2rem;
+}
+
+#header .site-header .header-title h1 {
+  font-size: 3.75rem;
+}
+
+#header .site-header .header-title h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1rem;
+}
+
+#header .site-header nav.site-nav {
+  position: relative;
+  float: right;
+  clear: none;
+  right: 20px;
+  height: 200px;
+}
+
+#header .site-header nav.site-nav .nav-social {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+#header .site-header nav.site-nav .nav-social a {
+  opacity: 0.8;
+}
+
+#header .site-header nav.site-nav .nav-social a svg {
+  fill: #ffffff;
+  height: 20px;
+}
+
+#header .site-header nav.site-nav .nav-main {
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
+}
+
+#header .site-header nav.site-nav .nav-main .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header .site-header nav.site-nav .nav-main .nav li {
+  text-align: center;
+  display: inline-block;
+  margin-left: 2.5rem;
+}
+
+#header .site-header nav.site-nav .nav-main .nav li a {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+  white-space: nowrap;
+}
+
+#header .site-header nav.site-nav .nav-main .nav li a:hover {
+  color: #ee3532;
+}
+
+#header .site-header nav.site-nav .nav-main .nav li.nav-current a {
+  color: #ee3532;
+}
+
+#header .site-subnav {
+  background-color: #ececec;
+  line-height: 2.35rem;
+  overflow: auto;
+}
+
+#header .site-subnav ul.subnav {
+  position: relative;
+  float: right;
+  padding-right: 20px;
+}
+
+#header .site-subnav ul.subnav li {
+  text-align: center;
+  display: inline-block;
+}
+
+#header .site-subnav ul.subnav li a {
+  color: #333333;
+  font-size: 0.9rem;
+}
+
+#header .site-subnav ul.subnav .subnav-divider {
+  display: inline-block;
+  color: #b0b0b0;
+  font-size: 0.8rem;
+  margin: 0px 1rem;
+}
+
+/* ----- RESPONSIVE STYLES ----- */
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,133 @@
+#header {
+    margin-bottom: $margin-browser;
+
+    .site-header {
+        position: relative;
+        width: 100%;
+        background: $primary-black;
+        height: $nav-height-browser;
+        @include shadow($primary-black);
+
+        .header-logo {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            float: left;
+            background: $primary-black url('../images/logo-flag.png') no-repeat left top;
+            background-size: 100% auto;
+            text-indent: -99999px;
+            height: $nav-height-browser;
+            width: 298px;
+        }
+
+        .header-title {
+            color: $primary-white;
+            position: relative;
+            display: inline-block;
+            padding-top: 2rem;
+
+            h1 {
+                font-size: 3.75rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                line-height: 1rem;
+            }
+        }
+
+
+        /* ------------ NAV ------------- */
+        nav.site-nav {
+            position: relative;
+            float: right;
+            clear: none;
+            right: $padding-browser;
+            height: $nav-height-browser;
+
+            .nav-social {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+
+                a {
+                    opacity: 0.8;
+
+                    svg {
+                        fill: $primary-white;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .nav-main {
+                position: absolute;
+                bottom: 15px;
+                right: 0px;
+
+                .nav {
+                    display: flex;
+
+                    li {
+                        text-align: center;
+                        display: inline-block;
+                        margin-left: 2.5rem;
+
+
+                        a {
+                            font-size: 1.15rem;
+                            font-weight: 900;
+                            letter-spacing: 0.4px;
+                            text-transform: uppercase;
+                            color: $primary-white;
+                            transition: 0.2s color;
+                            white-space: nowrap;
+                        }
+                        a:hover {
+                            color: $primary-red;
+                        }
+                    }
+                    li.nav-current a {
+                        color: $primary-red;
+                    }
+                }
+            }
+        }
+    }
+
+    .site-subnav {
+        background-color: $light-grey;
+        line-height: 2.35rem;
+        overflow: auto;
+
+        ul.subnav {
+            position: relative;
+            float: right;
+            padding-right: $padding-browser;
+
+            li {
+                text-align: center;
+                display: inline-block;
+
+                a {
+                    color: $dark-grey;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .subnav-divider {
+                display: inline-block;
+                color: $border-grey;
+                font-size: 0.8rem;
+                margin: 0px 1rem;
+            }
+        }
+    }
+}
+
+
+/* ----- RESPONSIVE STYLES ----- */
+@media (max-width: 500px) {
+
+}

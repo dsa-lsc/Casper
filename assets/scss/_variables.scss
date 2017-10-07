@@ -7,13 +7,19 @@ $primary-red: #ee3532;
 $primary-black: #000000;
 $primary-white: #ffffff;
 $light-grey: #ececec;
+$border-grey: #b0b0b0;
 $dark-grey: #333333;
-$off-white: #fffdfb;
+$off-white: #fefefe;
+
+//Sizing
+$nav-height-browser: 200px;
+$padding-browser: 20px;
+$margin-browser: 20px;
 
 //Mixins
 @mixin shadow($color) {
-  -webkit-box-shadow: -3px 0px 3px $color;
-  -moz-box-shadow: -3px 0px 3px $color;
-  box-shadow: -3px 0px 3px $color;
+  -webkit-box-shadow: 0px 0px 3px $color;
+  -moz-box-shadow: 0px 0px 3px $color;
+  box-shadow: 0px 0px 3px $color;
 }
 

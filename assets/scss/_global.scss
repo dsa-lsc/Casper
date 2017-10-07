@@ -10,7 +10,11 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {}
+section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
 
 h1 {
     font-weight: 900;
@@ -26,6 +30,17 @@ h2 {
 h3 {}
 h4 {}
 
+p {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+i {
+    font-weight: 300;
+    font-style: italic;
+}
+
 a, a:hover, a:visited {
     text-decoration: none;
 }
@@ -35,6 +50,10 @@ a, a:hover, a:visited {
     font-weight: 700;
 }
 
+/* -- temp --*/
+.featured-post {
+    margin: 0px $margin-browser 40px;
+}
 
 
 /* ---------------------------------------

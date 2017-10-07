@@ -7,23 +7,19 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#get "posts" filter="featured:true" limit="1" as |featured|}}
-                {{#foreach featured }}
-                    <section class="featured-full-content">
-                        {{ content }}
-                    </section>
-                {{/foreach}}
-            {{/get}}
-            {{#get "posts" filter="featured:false" as |notFeatured|}}
-                {{#foreach notFeatured}}
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
-                {{/foreach}}
-            {{/get}}
-        </div>
-
-    </div>
+    <section>
+        {{#get "posts" filter="featured:true" limit="1" as |featured|}}
+            {{#foreach featured }}
+                <div class="featured-post">
+                    {{ content }}
+                </div>
+            {{/foreach}}
+        {{/get}}
+        {{#get "posts" filter="featured:false" as |notFeatured|}}
+            {{#foreach notFeatured}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+        {{/get}}
+    </section>
 </main>

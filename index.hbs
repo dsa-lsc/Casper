@@ -1,9 +1,9 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-
-{{!-- Custom theme header with static design --}}
-{{> "custom-header"}}
+<div class="site-subnav">
+    {{> "home-subnav"}}
+</div>
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">
@@ -23,3 +23,13 @@ into the {body} of the default.hbs template --}}
         {{/get}}
     </section>
 </main>
+
+{{> floating-header}}
+
+{{#contentFor "scripts"}}
+    <script>
+        (function($) {
+            floatingHeader.update();
+        }),(jQuery);
+    </script>
+{{/contentFor}}

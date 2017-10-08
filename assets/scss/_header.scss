@@ -1,11 +1,9 @@
 #header {
-    margin-bottom: $margin-browser;
-
     .site-header {
         position: relative;
         width: 100%;
         background: $primary-black;
-        height: $nav-height-browser;
+        height: $header-height-browser;
         @include shadow($primary-black);
 
         .header-logo {
@@ -13,10 +11,10 @@
             top: 0px;
             left: 0px;
             float: left;
-            background: $primary-black url('../images/logo-flag.png') no-repeat left top;
-            background-size: 100% auto;
+            background: $primary-black url('../images/logo-flag.png') no-repeat top left;
+            background-size: auto 100%;
             text-indent: -99999px;
-            height: $nav-height-browser;
+            height: $header-height-browser;
             width: 298px;
         }
 
@@ -37,14 +35,14 @@
             }
         }
 
-
         /* ------------ NAV ------------- */
+        .mobile-menu { display: none; }
         nav.site-nav {
             position: relative;
             float: right;
             clear: none;
             right: $padding-browser;
-            height: $nav-height-browser;
+            height: $header-height-browser;
 
             .nav-social {
                 position: absolute;
@@ -68,11 +66,14 @@
 
                 .nav {
                     display: flex;
+                    margin: 0px;
+                    padding: 0px;
+                    list-style: none;
 
                     li {
                         text-align: center;
                         display: inline-block;
-                        margin-left: 2.5rem;
+                        margin: 0px 0px 0px 2.5rem;
 
 
                         a {
@@ -95,39 +96,93 @@
             }
         }
     }
+}
+.site-subnav {
+    background-color: $light-grey;
+    line-height: 2.35rem;
+    overflow: auto;
+    margin-bottom: $margin-browser;
 
-    .site-subnav {
-        background-color: $light-grey;
-        line-height: 2.35rem;
-        overflow: auto;
+    ul.subnav {
+        position: relative;
+        float: right;
+        padding-right: $padding-browser;
+        margin: 0px;
 
-        ul.subnav {
-            position: relative;
-            float: right;
-            padding-right: $padding-browser;
+        li {
+            text-align: center;
+            display: inline-block;
 
-            li {
-                text-align: center;
-                display: inline-block;
-
-                a {
-                    color: $dark-grey;
-                    font-size: 0.9rem;
-                }
+            a {
+                color: $dark-grey;
+                font-size: 0.9rem;
             }
+        }
 
-            .subnav-divider {
-                display: inline-block;
-                color: $border-grey;
-                font-size: 0.8rem;
-                margin: 0px 1rem;
-            }
+        .subnav-divider {
+            display: inline-block;
+            color: $border-grey;
+            font-size: 0.8rem;
+            margin: 0px 1rem;
         }
     }
 }
 
 
+
 /* ----- RESPONSIVE STYLES ----- */
-@media (max-width: 500px) {
+
+@media screen and (max-width: 900px) {
+    html, body {
+        font-size: 75% !important;
+    }
+    #header {
+        .site-header, .site-header .header-logo, .site-header nav.site-nav {
+            height: $header-height-mid;
+        }
+        .site-header .header-logo {
+            width: 225px;
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    #header {
+        .site-header {
+            height: $header-height-mobile;
+
+            .header-logo {
+                display: none;
+            }
+
+            .header-title {
+                margin: $margin-mobile;
+                padding: 0px;
+                position: relative;
+                display: inline-block;
+                float: left;
+
+                h1 {
+                    font-size: 2.5rem;
+                }
+                h2 {
+                    font-size: 1.7rem;
+                }
+            }
+            nav.site-nav {
+                display: none;
+            }
+            .mobile-menu {
+                cursor: pointer;
+                display: block;
+                position: absolute;
+                right: $margin-mobile;
+                line-height: $header-height-mobile;
+            }
+        }
+    }
+    .site-subnav {
+        display: none;
+    }
 
 }

@@ -86,7 +86,7 @@ gulp.task('lint', function() {
 gulp.task('scripts:dev', function() {
     return gulp.src(jsPath)
         .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
+        .pipe(concat('index.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(buildPath))
         .pipe(livereload())
@@ -95,7 +95,7 @@ gulp.task('scripts:dev', function() {
 
 gulp.task('scripts:prod', function() {
     return gulp.src(jsPath)
-        .pipe(concat('app.js'))
+        .pipe(concat('index.js'))
         .pipe(uglify())
         .pipe(gulp.dest(buildPath))
         .on('error', errorAlert);

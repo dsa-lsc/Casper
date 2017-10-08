@@ -2,7 +2,14 @@
 
 The theme for the DSA-LSC website. It's based on Casper.
 
-### Next up, updating this document with new functionality!
+##### Next up, updating this document with new functionality!
+
+
+### Current screenshot of where it's at
+
+ ![Screenshot](/screenshot.png?raw=true)
+ 
+----
 
 # First time using a Ghost theme?
 

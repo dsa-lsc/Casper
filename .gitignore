@@ -11,9 +11,9 @@ pids
 logs
 results
 
-config.development.json
 npm-debug.log
 node_modules
+package-lock.json
 
 .idea/*
 *.iml

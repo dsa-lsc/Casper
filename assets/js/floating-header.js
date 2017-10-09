@@ -3,15 +3,17 @@ var floatingHeader = (function($) {
 
     /* -----------------
     |  TO DO:
-    |  Direct copy from post JS, need to clean up.
+    |  - Direct copy from post JS, need to clean up.
+    |  - Need to De-activate this if mobile!
     |
-    |  QUESTION: Where in the JS besides here is jQuery being used? Scrap it here.
+    |  Where in the JS besides here is jQuery being used? Scrap it here.
     -------------------*/
 
     var title;
     var progressBar = document.querySelector('progress');
     var header = document.querySelector('.floating-header');
     title = document.querySelector('.post-full-title');
+    var mainHeader = document.getElementById('header');
 
     // For pages without a title display
     if(!title) {
@@ -49,8 +51,8 @@ var floatingHeader = (function($) {
     }
 
     function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
+        var trigger = mainHeader.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = mainHeader.offsetHeight - 25;
         var progressMax = lastDocumentHeight - lastWindowHeight;
 
         // show/hide floating header

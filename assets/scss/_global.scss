@@ -25,17 +25,41 @@ h2 {
     font-weight: 700;
     letter-spacing: -1px;
     font-size: 2rem;
+    line-height: 2.3rem;
     font-family: $serif-font;
 }
-h3 {}
-h4 {}
-h5 {}
-h6 {}
 
-p {
+.post-content-block h2, .kg-card-markdown h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-weight: 300;
+    letter-spacing: -1px;
+    font-size: 1.3rem;
+    font-family: $serif-font;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p, li, blockquote {
     text-align: justify;
     font-size: 1.2rem;
     line-height: 1.6rem;
+    font-weight: 300;
+    font-family: $sans-font;
 }
 
 i {
@@ -45,6 +69,8 @@ i {
 
 a, a:hover, a:visited {
     text-decoration: none;
+    color: $primary-red;
+    outline: 0;
 }
 
 .red-highlight {

@@ -6,14 +6,25 @@ The theme for the DSA-LSC website. It's based on Casper.
 
 
 ### Current screenshots of where it's at
-
+**Homepage**   
  ![Screenshot](/screenshot.png?raw=true)
+        
+----
+        
+**Tag Page**    
  ![Screenshot](/screenshot2.png?raw=true)
+        
+----
+        
+**Article Page (with floating menu)**      
  ![Screenshot](/screenshot3.png?raw=true)
+        
+----
+        
+**Mobile (header not finished)**     
  ![Screenshot](/screenshot-mobile.png?raw=true)
      
- (Mobile header design incomplete)
- 
+        
 ----
 
 # First time using a Ghost theme?

@@ -5,9 +5,14 @@ The theme for the DSA-LSC website. It's based on Casper.
 ##### Next up, updating this document with new functionality!
 
 
-### Current screenshot of where it's at
+### Current screenshots of where it's at
 
  ![Screenshot](/screenshot.png?raw=true)
+ ![Screenshot](/screenshot2.png?raw=true)
+ ![Screenshot](/screenshot3.png?raw=true)
+ ![Screenshot](/screenshot-mobile.png?raw=true)
+     
+ (Mobile header design incomplete)
  
 ----
 

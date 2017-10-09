@@ -22,7 +22,7 @@ This modification uses Gulp, JS, and SCSS to control the site. Most of the style
 - Images for site are in assets/images
  
 ----
-## Ghost Specific Docs
+### Ghost Specific Docs
 ----
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.

@@ -2,7 +2,28 @@
 
 The theme for the DSA-LSC website. It's based on Casper.
 
-# First time using a Ghost theme?
+# Development Setup
+
+This modification uses Gulp, JS, and SCSS to control the site. Most of the styles have been done in SCSS, styles transferred from casper have not been cleaned up yet, that's on the to-do list.
+
+#### To install:   
+
+`$ npm install`
+
+#### Available Gulp Tasks:
+
+- `$ gulp` - Runs `gulp watch` based on a local install.    
+- `$ gulp lint` - Runs lint on the JS to ensure there's no errors.
+- `$ gulp build` - Run for **PROD**, this creates minified files and preps site for production environment. 
+
+#### New Directory Structure:
+- All styles documents are now in assets/scss
+- All Scripts are located in assets/js, vendor scripts in assets/js/vendors
+- Images for site are in assets/images
+ 
+----
+## Ghost Specific Docs
+----
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
@@ -24,22 +45,17 @@ One really neat trick is that you can also create custom one-off templates just 
 - `author-ali.hbs` - Custom template for `/author/ali/` archive
 
 
-# Development
+# SVG Icons
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
+Casper uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
 
-`$ npm install`
-
-`$ gulp`
-
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+You can add your own SVG icons in the same manner.
 
 
-# PostCSS Features Used
+# Copyright & License
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
+Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
+bs` - Custom template for `/author/ali/` archive
 
 
 # SVG Icons

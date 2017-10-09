@@ -1,0 +1,28 @@
+//Fonts
+$sans-font: 'Fira Sans Condensed', 'Helvetica Neue Condensed', 'Helvetica', 'Sans-Serif';
+$serif-font: 'Zilla Slab', 'Georgia', 'Serif';
+
+//Colors
+$primary-red: #ee3532;
+$primary-black: #000000;
+$primary-white: #ffffff;
+$light-grey: #ececec;
+$border-grey: #b0b0b0;
+$dark-grey: #333333;
+$off-white: #fefefe;
+
+//Sizing
+$header-height-browser: 200px;
+$header-height-mid: 150px;
+$header-height-mobile: 75px;
+$padding-browser: 20px;
+$margin-browser: 20px;
+$margin-mobile: 10px;
+
+//Mixins
+@mixin shadow($color) {
+  -webkit-box-shadow: 0px 0px 3px $color;
+  -moz-box-shadow: 0px 0px 3px $color;
+  box-shadow: 0px 0px 3px $color;
+}
+

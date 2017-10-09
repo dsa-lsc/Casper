@@ -2,21 +2,28 @@
 
 The theme for the DSA-LSC website. It's based on Casper.
 
-##### Next up, updating this document with new functionality!
+# Development Setup
 
+This modification uses Gulp, JS, and SCSS to control the site. Most of the styles have been done in SCSS, styles transferred from casper have not been cleaned up yet, that's on the to-do list.
 
-### Current screenshots of where it's at
+#### To install:   
 
- ![Screenshot](/screenshot.png?raw=true)
- ![Screenshot](/screenshot2.png?raw=true)
- ![Screenshot](/screenshot3.png?raw=true)
- ![Screenshot](/screenshot-mobile.png?raw=true)
-     
- (Mobile header design incomplete)
+`$ npm install`
+
+#### Available Gulp Tasks:
+
+- `$ gulp` - Runs `gulp watch` based on a local install.    
+- `$ gulp lint` - Runs lint on the JS to ensure there's no errors.
+- `$ gulp build` - Run for **PROD**, this creates minified files and preps site for production environment. 
+
+#### New Directory Structure:
+- All styles documents are now in assets/scss
+- All Scripts are located in assets/js, vendor scripts in assets/js/vendors
+- Images for site are in assets/images
  
 ----
-
-# First time using a Ghost theme?
+## Ghost Specific Docs
+----
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
@@ -36,24 +43,6 @@ One really neat trick is that you can also create custom one-off templates just 
 - `page-about.hbs` - Custom template for the `/about/` page
 - `tag-news.hbs` - Custom template for `/tag/news/` archive
 - `author-ali.hbs` - Custom template for `/author/ali/` archive
-
-
-# Development
-
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
-
-`$ npm install`
-
-`$ gulp`
-
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
-
-
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
 
 
 # SVG Icons

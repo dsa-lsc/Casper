@@ -5,6 +5,7 @@
         background: $primary-black;
         height: $header-height-browser;
         @include shadow($primary-black);
+        z-index: 200;
 
         .header-logo {
             position: relative;
@@ -38,7 +39,7 @@
 }
 
 /* ------------ NAV ------------- */
-.mobile-menu { display: none; }
+#mobile-menu { display: none; }
 
 nav.site-nav {
     position: relative;
@@ -168,27 +169,66 @@ nav.site-nav {
             height: $header-height-mobile;
 
             .header-logo {
-                display: none;
+                height: 75px;
+                width: 110px;
             }
 
             .header-title {
-                margin: $margin-mobile;
+                margin: $margin-mobile 0px;
                 padding: 0px;
                 position: relative;
                 display: inline-block;
                 float: left;
+                max-width: 60vw;
 
                 h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.4rem;
+                    line-height: 2.0rem;
                 }
                 h2 {
-                    font-size: 1.7rem;
+                    font-size: 1.6rem;
+                    line-height: 1.3rem;
                 }
             }
             nav.site-nav {
                 display: none;
+                position: absolute;
+                z-index: 1000;
+                right: 0px;
+                top: $header-height-mobile;
+                background-color: rgba(0,0,0,0.9);
+                width: 50vw;
+
+                .nav-social {
+                    position: absolute;
+                    bottom: 5px;
+                    top: auto;
+                    right: $margin-mobile;
+                }
+                .nav-main {
+                    top: 0px;
+                    right: 0px;
+                    bottom: auto;
+                    display:block;
+                    width: 100%;
+                    background-color: #1d1d1d;
+
+                    .nav {
+                        display: block;
+
+                        li {
+                            display: block;
+                            padding: 5px $margin-mobile 5px 0px;
+
+                            a {
+                                display: block;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
             }
-            .mobile-menu {
+            #mobile-menu {
                 cursor: pointer;
                 display: block;
                 position: absolute;

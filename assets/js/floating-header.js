@@ -51,22 +51,28 @@ var floatingHeader = (function($) {
     }
 
     function update() {
-        var trigger = mainHeader.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = mainHeader.offsetHeight - 25;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            //Mobile, do not activate floating menu.
+            console.log(navigator.userAgent);
         } else {
-            header.classList.remove('floating-active');
+            var trigger = mainHeader.getBoundingClientRect().top + window.scrollY;
+            var triggerOffset = mainHeader.offsetHeight - 25;
+            var progressMax = lastDocumentHeight - lastWindowHeight;
+
+            // show/hide floating header
+            if (lastScrollY >= trigger + triggerOffset) {
+                header.classList.add('floating-active');
+            } else {
+                header.classList.remove('floating-active');
+            }
+
+            progressBar.setAttribute('max', progressMax);
+            progressBar.setAttribute('value', lastScrollY);
+
+            ticking = false;
         }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
     }
+
 
     return {
         update: update

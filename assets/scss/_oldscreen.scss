@@ -106,7 +106,7 @@
   min-height: 240px;
   overflow: hidden;
   margin: 0 20px 40px;
-  background: #fff center center;
+  background: $light-grey center center;
   background-size: cover;
   border-radius: 5px;
   box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
@@ -257,9 +257,13 @@ The first (most recent) post in the list is styled to be bigger than the others 
   text-align: left;
   padding-top: $margin-browser;
 }
+header.post-full-header {
+  margin-bottom: $margin-browser;
+}
+
 @media (max-width: 500px) {
   .post-full-header {
-      padding: 14vw 3vw 10vw;
+    padding-top: 0px;
   }
 }
 
@@ -275,17 +279,23 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-image {
   height: 600px;
-  margin: 0 -10vw -375px;
+  margin: 0 -15vw -375px -15vw;
+  width: 100vw;
+  max-width: none;
   background: $light-grey center center;
   background-size: cover;
-  border-radius: 5px;
+}
+
+.page .post-full-image {
+  margin: 0 -5vw -375px -5vw;
 }
 
 @media (max-width: 1170px) {
   .post-full-image {
       height: 600px;
       margin: 0 -4vw -375px;
-      border-radius: 0;
+      width: 100vw;
+      max-width: none;
   }
 }
 
@@ -297,13 +307,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-content {
   position: relative;
-  min-height: 230px;
+  min-height: 360px;
   margin: $margin-browser auto;
-  padding-top: 70px;
-  font-family: Georgia, serif;
-  font-size: 2.2rem;
-  line-height: 1.6em;
+  padding: 0px $margin-browser;
   background: #fff;
+  border-radius: 5px;
 }
 
 @media (max-width: 1170px) {
@@ -313,7 +321,8 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 @media (max-width: 800px) {
   .post-full-content {
-      font-size: 1.9rem;
+      font-size: 1.2rem;
+      padding: 0px $margin-mobile;
   }
 }
 
@@ -434,6 +443,7 @@ Usage (In Ghost edtior):
 .post-full-content img[src$="#full"] {
   width: 100vw;
   max-width: none;
+  margin-left: -16vw;
 }
 
 
@@ -528,32 +538,17 @@ Usage (In Ghost editor):
 
 
 .post-full-content h1 {
-  margin: 0.5em 0 0.2em 0;
-  font-size: 4.6rem;
-  font-weight: 700;
+  margin: 0 0 0.2em 0;
 }
 
 
 .post-full-content h3 {
   margin: 0.5em 0 0.2em 0;
-  font-size: 2.8rem;
-  font-weight: 700;
 }
-@media (max-width: 500px) {
-  .post-full-content h3 {
-      font-size: 2.2rem;
-  }
-}
+
 
 .post-full-content h4 {
   margin: 0.5em 0 0.2em 0;
-  font-size: 2.8rem;
-  font-weight: 700;
-}
-@media (max-width: 500px) {
-  .post-full-content h4 {
-      font-size: 2.2rem;
-  }
 }
 
 .post-full-content h5 {
@@ -562,34 +557,21 @@ Usage (In Ghost editor):
   padding: 1em 0 1.5em;
   border: 0;
   color: $primary-red;
-  font-family: Georgia,serif;
-  font-size: 3.2rem;
-  line-height: 1.35em;
   text-align: center;
 }
-@media (min-width: 1180px) {
-  .post-full-content h5 {
-      width: 100vw;
-      max-width: 1060px;
-  }
-}
+
 @media (max-width: 500px) {
   .post-full-content h5 {
       padding: 0 0 0.5em;
-      font-size: 2.2rem;
   }
+
+
 }
 
 .post-full-content h6 {
   margin: 0.5em 0 0.2em 0;
-  font-size: 2.3rem;
-  font-weight: 700;
 }
-@media (max-width: 500px) {
-  .post-full-content h6 {
-      font-size: 2rem;
-  }
-}
+
 
 .footnotes-sep {
   margin-bottom: 30px;
@@ -621,8 +603,11 @@ Usage (In Ghost editor):
       font-size: 2.9rem;
   }
   .post-full-image {
-      height: 350px;
+      height: 200px;
       margin-bottom: 4vw;
+  }
+  .page .post-full-image {
+    margin: 0 0 4vw -4vw;
   }
   .post-full-content {
       padding: 0;
@@ -1467,10 +1452,12 @@ Usage (In Ghost editor):
 
 .site-footer {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 60px;
   color: #fff;
   background: $dark-grey;
+
+  .site-nav {
+    height: 100px;
+  }
 }
 
 .site-footer-content {

@@ -33,6 +33,7 @@
                 font-weight: 300;
                 text-transform: uppercase;
                 line-height: 1rem;
+                margin: 0px;
             }
         }
     }
@@ -150,9 +151,6 @@ nav.site-nav {
 /* ----- RESPONSIVE STYLES ----- */
 
 @media screen and (max-width: 900px) {
-    html, body {
-        font-size: 75% !important;
-    }
     #header {
         .site-header, .site-header .header-logo, .site-header nav.site-nav {
             height: $header-height-mid;
@@ -179,7 +177,7 @@ nav.site-nav {
                 position: relative;
                 display: inline-block;
                 float: left;
-                max-width: 60vw;
+                max-width: 50vw;
 
                 h1 {
                     font-size: 2.4rem;
@@ -240,5 +238,12 @@ nav.site-nav {
 
     .site-subnav {
         display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #header .site-header .header-title h2 {
+        font-size: 1.4rem;
+        line-height: 1.1rem;
     }
 }

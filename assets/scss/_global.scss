@@ -4,6 +4,7 @@ body, html {
   font-family: $sans-font;
   font-weight: 300;
   font-size: 100%;
+  color: $dark-grey;
   background-color: $off-white;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
@@ -19,24 +20,26 @@ section {
 h1 {
     font-weight: 900;
     font-size: 2.4rem;
-    text-transform: uppercase;
-}
-h2 {
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 2.4rem;
-    font-family: $serif-font;
-    text-transform: capitalize;
 }
 
-.post-content-block h2, .kg-card-markdown h2 {
-    margin-bottom: 10px;
+h2 {
+    font-weight: 700;
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+    font-family: $serif-font;
+    text-transform: capitalize;
+    margin: 10px 0px;
+}
+
+.featured-post h2 {
+    font-size: 2.2rem;
 }
 
 h3 {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
     text-transform: capitalize;
+    letter-spacing: -0.3px;
 }
 
 h4 {
@@ -62,10 +65,15 @@ h6 {
 
 p, li, blockquote {
     text-align: justify;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
+    font-size: 1.15rem;
+    line-height: 1.7rem;
     font-weight: 300;
     font-family: $sans-font;
+}
+
+.post-card-excerpt p {
+    font-size: 1.05rem;
+    line-height: 1.45rem;
 }
 
 i {
@@ -77,6 +85,7 @@ a, a:hover, a:visited {
     text-decoration: none;
     color: $primary-red;
     outline: 0;
+    cursor: pointer;
 }
 
 .red-highlight {
@@ -97,6 +106,44 @@ a, a:hover, a:visited {
 }
 
 /* -- temp --*/
+/* -- to break up later --*/
 .featured-post {
     margin: 0px $margin-browser 40px;
+}
+
+.post-card.no-image {
+    border-top: 10px $primary-red solid;
+
+    .post-card-content-link {
+        padding-top: $margin-browser;
+    }
+}
+
+.post-full-header {
+    margin-bottom: $margin-browser;
+
+    .post-full-meta {
+        padding: 0px $margin-browser;
+        text-transform: uppercase;
+    }
+}
+
+
+/* ----- RESPONSIVE STYLES ----- */
+
+@media screen and (max-width: 900px) {
+    html, body {
+        font-size: 75% !important;
+    }
+}
+
+@media screen and (max-width: 699px) {
+
+    .kg-card-markdown, .post-full-header .post-full-meta {
+        padding: 0px;
+    }
+
+    .featured-post {
+        margin: 0px $margin-mobile 20px;
+    }
 }

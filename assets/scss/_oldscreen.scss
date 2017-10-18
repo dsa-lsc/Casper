@@ -63,30 +63,25 @@
   }
 }
 
-.featured-full-content {
+.featured-post {
   background-color: $off-white;
   padding: 1vw 2vw;
   border-radius: 5px;
 }
 
 
-.featured-full-content blockquote {
+.featured-post blockquote {
   font-family: $sans-font;
   border-left: none;
+  font-style: italic;
 }
 
-.featured-full-content blockquote cite {
+.featured-post blockquote cite {
   float: right;
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
   margin-top: 1rem;
 }
-
-
-
-
-
-
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -140,12 +135,12 @@
 
 .post-card-tags {
   display: block;
-  margin-bottom: 4px;
-  color: $dark-grey;
-  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: $mid-grey;
+  font-size: 0.8rem;
   line-height: 1.15em;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
@@ -160,12 +155,8 @@
   justify-content: space-between;
 }
 
-.post-card-excerpt {
-  font-family: Georgia, serif;
-}
-
 .post-card-meta {
-  padding: 0 25px 25px;
+  padding: 0 25px $margin-browser;
 }
 
 .author-profile-image {
@@ -179,8 +170,11 @@
 
 .post-card-author {
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+  color: $mid-grey;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
 }
 
 /* Special Styling for home page grid (below):
@@ -367,6 +361,7 @@ header.post-full-header {
   display: flex;
   flex-direction: column;
   max-width: 920px;
+  padding: 0px $margin-browser;
 }
 
 .post-full-content h1,
@@ -595,13 +590,7 @@ Usage (In Ghost editor):
 
 /* Some grouped styles for smaller viewports */
 @media (max-width: 500px) {
-  .post-full-meta {
-      font-size: 1.2rem;
-      line-height: 1.3em;
-  }
-  .post-full-title {
-      font-size: 2.9rem;
-  }
+
   .post-full-image {
       height: 200px;
       margin-bottom: 4vw;
@@ -628,7 +617,6 @@ Usage (In Ghost editor):
   border-spacing: 0;
   border-collapse: collapse;
   vertical-align: top;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.6rem;
   white-space: nowrap;
 }

@@ -10,8 +10,18 @@ var global = (function($) {
         document.querySelector('.header-title').innerHTML = titleString;
     }
 
+    //Controls the sub-navigation scrolling
+    function subNavScroll(id) {
+        var header = document.getElementById(id);
+        var offset = header.offsetTop + 200;
+
+        //temporarily using jQuery here to add a animation quickly.
+        $('html, body').animate({ scrollTop: offset }, 300);
+    }
+
     return {
-        titleHTML: titleHTML
+        titleHTML: titleHTML,
+        subNavScroll: subNavScroll
     };
 
 })(jQuery);

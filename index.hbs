@@ -17,12 +17,10 @@ into the {body} of the default.hbs template --}}
         {{/get}}
         <div class="inner">
             <div class="post-feed">
-                {{#get "posts" filter="featured:false" as |notFeatured|}}
-                    {{#foreach notFeatured}}
-                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                {{/get}}
+                {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
             </div>
         </div>
     </section>

@@ -280,7 +280,7 @@ header.post-full-header {
   background-size: cover;
 }
 
-.page .post-full-image {
+.page-template .post-full-image {
   margin: 0 -5vw -375px -5vw;
 }
 
@@ -595,7 +595,7 @@ Usage (In Ghost editor):
       height: 200px;
       margin-bottom: 4vw;
   }
-  .page .post-full-image {
+  .page-template .post-full-image {
     margin: 0 0 4vw -4vw;
   }
   .post-full-content {

@@ -1,7 +1,7 @@
 {
-  "name": "rosa",
-  "description": "The theme for the DSA Libertarian Socialist Caucus.",
-  "version": "1.0.0",
+  "name": "rosæ",
+  "description": "New theme for the DSA Libertarian Socialist Caucus.",
+  "version": "2.0.0",
   "engines": {
     "ghost": ">=1.2.0"
   },

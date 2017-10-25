@@ -65,14 +65,14 @@ h6 {
 
 p, li, blockquote {
     text-align: justify;
-    font-size: 1.15rem;
+    font-size: $copy-font-size;
     line-height: 1.7rem;
     font-weight: 300;
     font-family: $sans-font;
 }
 
 .post-card-excerpt p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.45rem;
 }
 
@@ -94,7 +94,7 @@ a, a:hover, a:visited {
 }
 
 .small-text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 1.1rem;
 }
 .no-padding {
@@ -103,6 +103,11 @@ a, a:hover, a:visited {
 
 .no-margin {
     margin: 0px !important;
+}
+
+::selection {
+    text-shadow: none;
+    background: $light-grey;
 }
 
 /* -- temp --*/
@@ -133,7 +138,7 @@ a, a:hover, a:visited {
 
 @media screen and (max-width: 900px) {
     html, body {
-        font-size: 75% !important;
+        font-size: 85% !important;
     }
 }
 

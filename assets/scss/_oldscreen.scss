@@ -534,8 +534,12 @@ Usage (In Ghost editor):
 
 .post-full-content h1 {
   margin: 0 0 0.2em 0;
+  letter-spacing: 0.7px;
 }
 
+.tag-news h1.post-full-title {
+  font-size: 2.25rem;
+}
 
 .post-full-content h3 {
   margin: 0.5em 0 0.2em 0;

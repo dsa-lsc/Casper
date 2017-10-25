@@ -90,10 +90,10 @@ nav.site-nav {
             li {
                 text-align: center;
                 display: inline-block;
-                margin: 0px 0px 0px 2.5rem;
+                margin: 0px 0px 0px 2.35rem;
 
                 a {
-                    font-size: 1.15rem;
+                    font-size: 1.2rem;
                     font-weight: 900;
                     letter-spacing: 0.4px;
                     text-transform: uppercase;
@@ -134,15 +134,15 @@ nav.site-nav {
 
             a {
                 color: $dark-grey;
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
 
         .subnav-divider {
             display: inline-block;
             color: $border-grey;
-            font-size: 0.8rem;
-            margin: 0px 1rem;
+            font-size: 1rem;
+            margin: 0px 0.7rem;
         }
     }
 }

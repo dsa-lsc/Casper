@@ -29,7 +29,7 @@ $(function ($) {
 
     function requestTick() {
         if (!ticking) {
-            requestAnimationFrame(infiniteScroll)
+            requestAnimationFrame(infiniteScroll);
         }
         ticking = true;
     }

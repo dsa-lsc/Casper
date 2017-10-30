@@ -1,5 +1,10 @@
-<div id="mobile-menu" ontouchstart="mobile.mobileMenuTouch()">{{> "icons/mobile"}}</div>
-<nav class="site-nav">
+{{!-- Rose at the bottom of all the content - the site "logo" --}}
+<div class="footer-logo">
+    <img src="{{asset "images/rose.png"}}" width="150" alt="{{@blog.title}}">
+</div>
+
+<footer class="site-footer">
+    <nav class="site-nav">
     <div class="nav-social">
         <ul class="nav">
             {{#if @blog.facebook}}
@@ -23,3 +28,4 @@
         {{/if}}
     </div>
 </nav>
+</footer>

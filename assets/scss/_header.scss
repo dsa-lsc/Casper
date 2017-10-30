@@ -1,0 +1,249 @@
+#header {
+    .site-header {
+        position: relative;
+        width: 100%;
+        background: $primary-black;
+        height: $header-height-browser;
+        @include shadow($primary-black);
+        z-index: 200;
+
+        .header-logo {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            float: left;
+            background: $primary-black url('../images/logo-flag.png') no-repeat top left;
+            background-size: auto 100%;
+            text-indent: -99999px;
+            height: $header-height-browser;
+            width: 298px;
+        }
+
+        .header-title {
+            color: $primary-white;
+            position: relative;
+            display: inline-block;
+            padding-top: 2rem;
+
+            h1 {
+                font-size: 3.75rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                line-height: 1rem;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+/* ------------ NAV ------------- */
+#mobile-menu { display: none; }
+
+nav.site-nav {
+    position: relative;
+    float: right;
+    clear: none;
+    right: $padding-browser;
+    height: $header-height-browser;
+
+    .nav-social {
+        position: absolute;
+        top: 15px;
+        right: 0px;
+
+        li {
+            display: inline-block;
+            margin: 0px 0px 0px 5px;
+
+            a {
+                opacity: 0.8;
+                white-space: nowrap;
+
+                svg {
+                    fill: $primary-white;
+                    height: 20px;
+                }
+            }
+        }
+
+        a.social-link-fb svg {
+            height: 15px;
+        }
+    }
+
+    .nav {
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    .nav-main {
+        position: absolute;
+        bottom: 15px;
+        right: 0px;
+
+        .nav {
+            li {
+                text-align: center;
+                display: inline-block;
+                margin: 0px 0px 0px 2.35rem;
+
+                a {
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                    letter-spacing: 0.4px;
+                    text-transform: uppercase;
+                    color: $primary-white;
+                    transition: 0.2s color;
+                    white-space: nowrap;
+                }
+                a:hover {
+                    color: $primary-red;
+                }
+            }
+            li.nav-current a {
+                color: $primary-red;
+            }
+        }
+    }
+}
+
+.floating-header nav.site-nav {
+    height: 60px;
+}
+
+.site-subnav {
+    background-color: $light-grey;
+    line-height: 2.35rem;
+    overflow: auto;
+    margin-bottom: $margin-browser;
+
+    ul.subnav {
+        position: relative;
+        float: right;
+        padding-right: $padding-browser;
+        margin: 0px;
+
+        li {
+            text-align: center;
+            display: inline-block;
+
+            a {
+                color: $dark-grey;
+                font-size: 1rem;
+            }
+        }
+
+        .subnav-divider {
+            display: inline-block;
+            color: $border-grey;
+            font-size: 1rem;
+            margin: 0px 0.7rem;
+        }
+    }
+}
+
+
+/* ----- RESPONSIVE STYLES ----- */
+
+@media screen and (max-width: 900px) {
+    #header {
+        .site-header, .site-header .header-logo, .site-header nav.site-nav {
+            height: $header-height-mid;
+        }
+        .site-header .header-logo {
+            width: 225px;
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    #header {
+        .site-header {
+            height: $header-height-mobile;
+
+            .header-logo {
+                height: 75px;
+                width: 110px;
+            }
+
+            .header-title {
+                margin: $margin-mobile 0px;
+                padding: 0px;
+                position: relative;
+                display: inline-block;
+                float: left;
+                max-width: 50vw;
+
+                h1 {
+                    font-size: 2.4rem;
+                    line-height: 2.0rem;
+                }
+                h2 {
+                    font-size: 1.6rem;
+                    line-height: 1.3rem;
+                }
+            }
+            nav.site-nav {
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                right: 0px;
+                top: $header-height-mobile;
+                background-color: rgba(0,0,0,0.9);
+                width: 50vw;
+
+                .nav-social {
+                    position: absolute;
+                    bottom: 5px;
+                    top: auto;
+                    right: $margin-mobile;
+                }
+                .nav-main {
+                    top: 0px;
+                    right: 0px;
+                    bottom: auto;
+                    display:block;
+                    width: 100%;
+                    background-color: #1d1d1d;
+
+                    .nav {
+                        display: block;
+
+                        li {
+                            display: block;
+                            padding: 5px $margin-mobile 5px 0px;
+
+                            a {
+                                display: block;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+            #mobile-menu {
+                cursor: pointer;
+                display: block;
+                position: absolute;
+                right: $margin-mobile;
+                line-height: $header-height-mobile;
+            }
+        }
+    }
+
+    .site-subnav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #header .site-header .header-title h2 {
+        font-size: 1.4rem;
+        line-height: 1.1rem;
+    }
+}

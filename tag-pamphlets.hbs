@@ -1,0 +1,32 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer" role="main">
+    <section class="inner">
+        <h2>Pamphlets</h2>
+        <p>
+          One of the initiatives the Libertarian Socialist Caucus is most proud of is our DSA-LSC Pamphlet Program. In the interests of expanding discussion and debate within the DSA, we have offered to lay out and publish Caucus members’ opinions in pamphlets that can both be distributed online in PDF form or printed and stapled into booklets that can be disseminated in person.
+        </p><p>
+Unless otherwise stated, these pamphlets do not represent official positions of the Libertarian Socialist Caucus arrived at via consensus; rather, they represent solely the views of the author(s).
+        </p><p>
+In the spirit of the long anarchist and socialist tradition of agitation propaganda, we encourage everyone to spread those pamphlets they agree with far and wide in order that the views expressed in them can change the conversation within DSA.
+        </p><p>
+For instructions on how to fold and staple a bi-fold pamphlet, please see <a href="https://www.wikihow.com/Staple-a-Booklet" title="staple a booklet">here</a> and <a href="https://en.wikibooks.org/wiki/Zine_Making/Putting_pages_together" title="Putting Zine Pages Together">here</a>. And have a look at these instructions on <a href="https://www.wikihow.com/Fold-Paper-for-Tri-Fold-Brochures" title="how to fold a trifold">how to fold a trifold pamphlet</a>.
+        </p>
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+    </div>
+</main>
+
+{{#contentFor "scripts"}}
+    <script>
+        (function($) {
+            floatingHeader.update();
+        }),(jQuery);
+    </script>
+{{/contentFor}}

@@ -17,7 +17,7 @@
             {{#if @labs.subscribers}}
                 <li><a class="subscribe-button" href="#subscribe">Subscribe</a></li>
             {{else}}
-                <li><a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">{{> "icons/rss"}}</a></li>
+                <li><a class="rss-button" href="{{@blog.url}}/rss/" target="_blank">{{> "icons/rss"}}</a></li>
             {{/if}}
         </ul>
     </div>
